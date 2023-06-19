@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,600&display=swap');
+
+/* bootstrap override  start*/
+@media (min-width: 1440px) { 
+    .container {
+        width: 1600px;
+    }
+}
+
+@media (min-width: 1920px) { 
+    .container {
+        width: 1600px;
+    }
+}
+/* bootstrap override end*/
+
+/* reset code start*/
+
+* {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+}
+
+/*reset code end*/
+html, body {
+    background-color: #efefef;
+    color: #24241f;
+}
+
+header {
+    width: 100%;
+    height: 95px;
+    background-color: #eeeeee;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0 6px 1px #afafaf;
+}
+
+header .hero {
+    font-size: 28px;
+    letter-spacing: -2px;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 20px 30px;
+}
+
+.main-title {
+    color: #06b900;
+}
