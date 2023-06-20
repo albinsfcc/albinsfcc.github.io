@@ -30,13 +30,16 @@ html, body {
 header {
     width: 100%;
     height: 95px;
-    background-color: #eeeeee;
+    background-color: #b2b2b280;
     display: flex;
     align-items: center;
     box-shadow: 0 0 6px 1px #afafaf;
+    position: fixed;
+    backdrop-filter: blur(50px);
+    top: 0;
 }
 
-header .hero {
+header .hero-logo {
     font-size: 28px;
     letter-spacing: -2px;
     text-transform: uppercase;
@@ -44,6 +47,39 @@ header .hero {
     padding: 20px 30px;
 }
 
-.main-title {
-    color: #06b900;
+main .hero-banner {
+    height: calc(100vh - 95px);
+    margin-top: 95px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.541), rgba(0, 0, 0, 0.637)), url(../static/images/hero-banner/profile-hero.JPG);
+    
+    @media screen and (max-width: 1024px) {
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.541), rgba(0, 0, 0, 0.637)), url('../static/images/hero-banner/profile-hero-tab.jpg') no-repeat;
+    }
+
+    @media screen and (max-width: 544px) {
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.541), rgba(0, 0, 0, 0.637)), url('../static/images/hero-banner/profile-hero-mobile.jpg');
+    }
+}
+
+
+main .hero-banner .text-content {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    width: fit-content;
+    font-weight: bold;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+main .hero-banner .text-content .main-title {
+    color: #d3d3d3;
+    font-size: 54px;
+    font-weight: 300;
+    @media screen and (max-width: 1024px) {
+        font-size: 36px;
+    }
+    @media screen and (max-width: 544px) {
+        font-size: 24px;
+    }
 }
