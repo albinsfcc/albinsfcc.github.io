@@ -33,6 +33,12 @@ function formatDateTime(date) {
   $('.go-to-top').on('click', function () {
     $("html, body").animate(
       { scrollTop: "0" }, 1000);
+  });
+
+  $('.go-to-top').on('mouseenter', function () {
+    $('.fa-angles-up').addClass('fa-bounce').on('mouseout', function () {
+      $('.fa-angles-up').removeClass('fa-bounce');
+    })
   })
   // Update the date and time immediately
   updateDateTime();
