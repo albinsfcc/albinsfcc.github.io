@@ -25,6 +25,15 @@ function formatDateTime(date) {
     dateTimeElement.textContent = formattedDateTime;
   }
 
+
+  $('#theme').on('click', function () {
+    $('body').toggleClass('dark');
+  });
+
+  $('.go-to-top').on('click', function () {
+    $("html, body").animate(
+      { scrollTop: "0" }, 1000);
+  })
   // Update the date and time immediately
   updateDateTime();
 
