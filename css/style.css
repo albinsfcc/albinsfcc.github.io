@@ -69,6 +69,23 @@ header .menu .menu-list .menu-item a {
     font-weight: 600;
 }
 
+header #theme {
+    padding-right: 30px;
+    font-size: 30px;
+    cursor: pointer;
+    transition: transform 1s, filter 1s;
+}
+
+header #theme:hover {
+   transform: scale(1.1);
+   filter: invert(1);
+}
+
+header #theme i {
+    color: #000;
+}
+
+/**************   MAIN   ************/
 main .hero-banner {
     height: calc(100vh - 95px);
     margin-top: 95px;
@@ -116,12 +133,13 @@ main .bio .bio-title {
 }
 
 main .content-section {
-    padding-top: 100px;
+    padding: 100px;
 }
 
 main .content-section .content-title h2{
     text-align: center;
     font-weight: 600;
+    padding-bottom: 20px;
 }
 
 main .bio .bio-wrapper {
@@ -157,12 +175,77 @@ main .bio .bio-wrapper .bio-text .bio-text-content {
     text-indent: 10%;
     text-align: justify;
     transition: color  .5s;
+    font-size: 16px;
 }
 
 main .bio .bio-wrapper .bio-text .bio-text-content:hover {
     color: #232650;
 }
 
-main .portfolio {
-    
+main .portfolio .experience {
+    padding: 20px;
+    margin: 20px;
+    background: #e2e2e2;
+    border-radius: 10px;
+}
+
+
+main .portfolio .experience .tenure:after {
+    content: ',';
+} 
+
+main .portfolio .experience .tenure, main .portfolio .experience .exp-location {
+    display: inline-block;
+    padding: 0 5px;
+}
+
+main .portfolio .experience .roles .role-list {
+    list-style: '▸ ';
+}
+
+main .projects  .projects-list {
+    list-style: none;
+    text-align: center;
+}
+
+main .projects  .projects-list .project-item {
+    padding: 5px 10px;
+    width: fit-content;
+    display: inline-block;
+    border: 1px solid gray;
+    margin: 5px;
+    border-radius: 8px;
+    background:#c4c9c6;
+    transition: background-color .5s, transform .5s;
+    color: #232650;
+}
+main .projects  .projects-list .project-item:hover {
+    background-color: transparent;
+    color: #000;
+    transform: translateY(-4px);
+}
+
+main .projects  .projects-list .project-item .project-link {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/*********************** FOOTER ********************/
+footer {
+    background-color: #bebebe;
+    padding: 200px;
+}
+
+footer a.go-to-top {
+    font-size: 16px;
+    border: 2px solid #337ab7;
+    border-radius: 50%;
+    padding: 10px;
+    line-height: 1;
+    display: inline-block;
+}
+
+footer .footer-content {
+    text-align: center;
 }
