@@ -94,7 +94,7 @@ main .bio .bio-title {
     padding: 20px;
 }
 
-main .bio .bio-title h2{
+main .content-section .content-title h2{
     text-align: center;
     font-weight: 600;
 }
@@ -136,4 +136,8 @@ main .bio .bio-wrapper .bio-text .bio-text-content {
 
 main .bio .bio-wrapper .bio-text .bio-text-content:hover {
     color: #232650;
+}
+
+main .portfolio {
+    
 }
