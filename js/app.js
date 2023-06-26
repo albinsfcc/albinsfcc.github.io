@@ -1,43 +1,34 @@
-function formatDate(date) {
+function formatDateTime(date) {
     const months = [
       "January", "February", "March", "April", "May", "June",
       "July", "August", "September", "October", "November", "December"
     ];
-  
+
     const day = String(date.getDate()).padStart(2, '0');
     const month = months[date.getMonth()];
     const year = date.getFullYear();
-  
-    return `${day} ${month} ${year}`;
-  }
-
-  function updateClock() {
-    const clockElement = document.getElementById("liveClock");
-    const currentTime = new Date();
-
-    let hours = currentTime.getHours();
-    const minutes = String(currentTime.getMinutes()).padStart(2, '0');
-    const seconds = String(currentTime.getSeconds()).padStart(2, '0');
+    let hours = date.getHours();
+    const minutes = String(date.getMinutes()).padStart(2, '0');
+    const seconds = String(date.getSeconds()).padStart(2, '0');
     const amPm = hours >= 12 ? 'PM' : 'AM';
 
-    hours = hours % 12 || 12;
+    hours = String(hours % 12 || 12).padStart(2, '0');
 
-    const formattedTime = `${hours}:${minutes}:${seconds} ${amPm} IST`;
-    clockElement.textContent = formattedTime;
+    return `${day} ${month} ${year} ${hours}:${minutes}:${seconds} ${amPm}`;
   }
 
-    // Update the clock immediately
-    updateClock();
+  function updateDateTime() {
+    const dateTimeElement = document.getElementById("currentDateTime");
+    const currentDateTime = new Date();
+    const formattedDateTime = formatDateTime(currentDateTime);
 
-    // Update the clock every second (1000 milliseconds)
-    setInterval(updateClock, 1000);
+    dateTimeElement.textContent = formattedDateTime;
+  }
 
-    // Get the current date
-    const currentDate = new Date();
+  // Update the date and time immediately
+  updateDateTime();
 
-    // Format the date
-    const formattedDate = formatDate(currentDate);
-    // Append the result to the element with ID "currentDate"
-    const element = document.getElementById("currentDate");
-    element.textContent = formattedDate;
+  // Update the date and time every second (1000 milliseconds)
+  setInterval(updateDateTime, 1000);
+
   
