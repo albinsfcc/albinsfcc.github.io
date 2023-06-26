@@ -3,7 +3,7 @@
 /* bootstrap override  start*/
 @media (min-width: 1440px) { 
     .container {
-        width: 1600px;
+        width: 1280px;
     }
 }
 
@@ -30,13 +30,14 @@ html, body {
 header {
     width: 100%;
     height: 95px;
-    background-color: #b2b2b280;
+    background-color: #e2e2e2bd;
     display: flex;
     align-items: center;
     box-shadow: 0 0 6px 1px #afafaf;
     position: fixed;
     backdrop-filter: blur(50px);
     top: 0;
+    z-index: 100;
 }
 
 header .hero-logo {
@@ -70,6 +71,7 @@ main .hero-banner .text-content {
     font-weight: bold;
     transform: translate(-50%, -50%);
     text-align: center;
+    z-index: 99;
 }
 
 main .hero-banner .text-content .main-title {
@@ -82,4 +84,54 @@ main .hero-banner .text-content .main-title {
     @media screen and (max-width: 544px) {
         font-size: 24px;
     }
+}
+
+main .bio {
+    padding: 60px 20px;
+}
+
+main .bio .bio-title {
+    padding: 20px;
+}
+
+main .bio .bio-title h2{
+    text-align: center;
+    font-weight: 600;
+}
+
+main .bio .bio-wrapper {
+    display: flex;
+    align-items: center;
+
+    @media screen and (max-width: 544px) {
+        flex-direction: column;
+    }
+}
+main .bio .bio-wrapper .bio-thumbnail {
+    padding: 30px;
+    flex: 1;
+    flex-basis: 0;
+}
+
+main .bio .bio-wrapper .bio-thumbnail img {
+    width: 100%;
+    border-radius: 2px;
+    box-shadow: 0 0 5px 0px rgb(53, 53, 53);
+}
+
+main .bio .bio-wrapper .bio-text {
+    flex: 1;
+    flex-basis: 0;
+}
+
+main .bio .bio-wrapper .bio-text .bio-text-content {
+    padding: 20px;
+    height: fit-content;
+    text-indent: 10%;
+    text-align: justify;
+    transition: color  .5s;
+}
+
+main .bio .bio-wrapper .bio-text .bio-text-content:hover {
+    color: #232650;
 }
