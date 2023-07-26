@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Maven+Pro:wght@400;500;600;700;800;900&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap');
+
 
 /* bootstrap override  start*/
 @media (min-width: 1440px) { 
@@ -18,7 +20,9 @@
 
 * {
     font-family: 'Open Sans', sans-serif;
+    font-family: 'Tajawal', sans-serif;
     font-weight: 400;
+    font-size: 16px;
 }
 
 /*reset code end*/
@@ -171,10 +175,14 @@ main .bio .bio-wrapper .bio-text {
 main .bio .bio-wrapper .bio-text .bio-text-content {
     padding: 20px;
     height: fit-content;
-    text-indent: 10%;
     text-align: justify;
     transition: color  .5s;
     font-size: 16px;
+}
+
+main .bio .bio-wrapper .bio-text .bio-text-content::first-letter {
+    initial-letter: 2;
+    padding-right: 5px;
 }
 
 main .bio .bio-wrapper .bio-text .bio-text-content:hover {
@@ -205,12 +213,19 @@ main .portfolio .experience .roles .role-list {
 main .projects  .projects-list {
     list-style: none;
     text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 main .projects  .projects-list .project-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 0 0 3px 1px #5e9380;
     padding: 5px 10px;
-    width: fit-content;
-    display: inline-block;
+    width: 25%;
+    height: 100px;
     border: 1px solid gray;
     margin: 5px;
     border-radius: 8px;
@@ -229,6 +244,26 @@ main .projects  .projects-list .project-item .project-link {
     text-decoration: none;
 }
 
+main .contact .contact-options {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+main .contact .contact-options .contact-option a {
+    min-width: 200px;
+    text-align: center;
+    display: inline-block;
+    font-size: 18px;
+    line-height: 1;
+    padding: 1rem;
+    border: 1px solid #2174e2;
+    border-radius: 3px;
+    background-color: #1051a5;
+    box-sizing: border-box;
+    color: #fafafa;
+    text-decoration: none;
+}
 
 /*********************** FOOTER ********************/
 footer {
