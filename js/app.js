@@ -14,7 +14,7 @@ function formatDateTime(date) {
 
     hours = String(hours % 12 || 12).padStart(2, '0');
 
-    return `${day} ${month} ${year} ${hours}:${minutes}:${seconds} ${amPm}`;
+    return `${year} ${month} ${day} | ${hours}:${minutes}:${seconds} ${amPm}`;
   }
 
   function updateDateTime() {

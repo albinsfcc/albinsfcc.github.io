@@ -89,9 +89,13 @@ header #theme i {
 }
 
 /**************   MAIN   ************/
+
+#home {
+    padding-top: 50px;
+}
+
 main .hero-banner {
     height: calc(100vh - 70px);
-    margin-top: 70px;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.541), rgba(0, 0, 0, 0.637)), url(../static/images/hero-banner/profile-hero.JPG);
     
     @media screen and (max-width: 1024px) {
@@ -210,6 +214,78 @@ main .portfolio .experience .roles .role-list {
     list-style: '▸ ';
 }
 
+main .portfolio .certification {
+    display: flex;
+    flex-direction: row;
+    background-color: #c6edff;
+    margin: 60px;
+    border-radius: 20px;
+    text-align: center;
+    height: 250px;
+}
+
+main .portfolio .certification .certification-title h3 {
+    margin-bottom: 20px;
+}
+
+main .portfolio .certification .certification-body {
+    padding: 20px;
+    margin: 0 30px;
+}
+
+main .portfolio .certification .certification-body .certification-description {
+    width: 80%;
+    margin: 30px auto;
+}
+
+main .portfolio .certification .certificate-modal .view-certificate {
+    background-color: rgb(8, 23, 112);
+    color: #d3d3d3;
+    writing-mode: vertical-rl;
+    text-orientation: sideways;
+    height: 100%;
+    padding: 0 30px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    transition: all 2s;
+}
+
+main .portfolio .certification .certificate-modal {
+    display: flex;
+}
+
+main .portfolio .certification .certificate-modal .view-certificate .text {
+    font-weight: 600;
+}
+
+main .portfolio .certification .certificate-modal .certificate {
+    background-image: url(../static/images/certificates/SFCCB2C.png);
+    width: 709px;
+    height: 400px;
+    background-size: contain;
+    position: absolute;
+    opacity: 0;
+    left: -50%;
+    transition: all 1s;
+}
+/* main .portfolio .certification .certificate-modal .view-certificate:hover {
+    border-radius: 0;
+    position: absolute;
+} */
+
+main .portfolio .certification .certificate-modal .view-certificate:hover + .certificate {
+    left: 50%;
+    opacity: 1;
+    display: block;
+    transform: translateX(-50%);
+}
+
+main .portfolio .certification .certificate-modal .view-certificate:hover {
+    background-color: #109204;
+}
+
+
+/* Projects start */
 main .projects  .projects-list {
     list-style: none;
     text-align: center;
