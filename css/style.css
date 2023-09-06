@@ -133,6 +133,7 @@ main .hero-banner .text-content .main-title {
 
 main .bio {
     padding: 60px 20px;
+
 }
 
 main .bio .bio-title {
@@ -141,12 +142,20 @@ main .bio .bio-title {
 
 main .content-section {
     padding: 100px;
+    
+    @media screen and (max-width: 1024px) {
+        padding: 35px 0;
+    }
 }
 
 main .content-section .content-title h2{
     text-align: center;
     font-weight: 600;
     padding-bottom: 20px;
+
+    @media screen and (max-width: 1024px) {
+        padding: 30px 0;
+    }
 }
 
 main .bio .bio-wrapper {
@@ -222,6 +231,18 @@ main .portfolio .certification {
     border-radius: 20px;
     text-align: center;
     height: 250px;
+    
+    @media screen and (max-width: 991px) {
+        height: 450px;
+    }
+    
+    @media screen and (max-width: 544px) {
+        height: 400px;
+        margin: 10px;
+    }
+    @media screen and (max-width: 441px) {
+        height: 500px;
+    }
 }
 
 main .portfolio .certification .certification-title h3 {
@@ -231,11 +252,24 @@ main .portfolio .certification .certification-title h3 {
 main .portfolio .certification .certification-body {
     padding: 20px;
     margin: 0 30px;
+    
+    @media screen and (max-width: 544px) {
+        margin: 0;
+        padding: 0;
+    }
 }
 
 main .portfolio .certification .certification-body .certification-description {
     width: 80%;
     margin: 30px auto;
+
+    @media screen and (max-width: 991px) {
+        text-align: justify;
+    }
+    
+    @media screen and (max-width: 544px) {
+        text-align: start;
+    }
 }
 
 main .portfolio .certification .certificate-modal .view-certificate {
@@ -267,6 +301,12 @@ main .portfolio .certification .certificate-modal .certificate {
     opacity: 0;
     left: -50%;
     transition: all 1s;
+
+    @media screen and (max-width: 991px) {
+        width: calc(100vw - 10px);
+        aspect-ratio: 353 / 199;
+    }
+
 }
 /* main .portfolio .certification .certificate-modal .view-certificate:hover {
     border-radius: 0;
@@ -291,6 +331,10 @@ main .projects  .projects-list {
     display: flex;
     flex-wrap: nowrap;
     flex-direction: column;
+
+    @media screen and (max-width: 544px) {
+        padding: 0 5%;
+    }
 }
 
 main .projects  .projects-list .project-item {
@@ -330,6 +374,11 @@ main .contact .contact-options {
     display: flex;
     justify-content: center;
     gap: 40px;
+
+    @media screen and (max-width: 544px) {
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 main .contact .contact-options .contact-option a {
@@ -351,6 +400,10 @@ main .contact .contact-options .contact-option a {
 footer {
     background-color: #bebebe;
     padding: 200px;
+
+    @media screen and (max-width: 544px) {
+        padding: 20px;
+    }
 }
 
 footer a.go-to-top {
