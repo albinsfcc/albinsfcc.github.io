@@ -1,3 +1,50 @@
+const $body = $('body');
+const menuTimeout = 400;
+
+
+function closeMenu() {
+  $('.outer-menu').animate({
+    right: '-80%'
+  }, menuTimeout);
+  setTimeout(() => {
+    $('.full-screen-overlay').remove();
+  }, menuTimeout);
+  $body.removeClass('fixed-body');
+}
+
+function openMenu() {
+  $('.full-screen-overlay').remove();
+    var overlay = document.createElement('div');
+    overlay.classList.add('full-screen-overlay');
+    var $menu = $('.menu-list').clone();
+    var closeBtn = $('<div>').addClass('close-btn').append('<i class="fa-solid fa-xmark" style="color: #000000;"></i>');
+    var $menuOuter = $('<div>').addClass('outer-menu').append(closeBtn).append($menu);
+    $(overlay).append($menuOuter);
+    $body.append(overlay);
+    $('.outer-menu').animate({
+      right: '0'
+    }, menuTimeout);
+    $body.addClass('fixed-body');
+}
+
+
+function initEvents() {
+
+  // hamburger click event
+  $('.hamburger').on('click', function () {
+    openMenu();
+  });
+
+  // hamburger close 
+  $body.on('click', '.close-btn i', function () {
+    closeMenu();
+  });
+
+  $body.on('click', '.full-screen-overlay li.menu-item', function () {
+    closeMenu();
+  })
+}
+
 function formatDateTime(date) {
     const months = [
       "January", "February", "March", "April", "May", "June",
@@ -39,11 +86,12 @@ function formatDateTime(date) {
     $('.fa-angles-up').addClass('fa-bounce').on('mouseout', function () {
       $('.fa-angles-up').removeClass('fa-bounce');
     })
-  })
+  });
   // Update the date and time immediately
   updateDateTime();
 
   // Update the date and time every second (1000 milliseconds)
   setInterval(updateDateTime, 1000);
 
-  
+  // initialize events
+  initEvents();
