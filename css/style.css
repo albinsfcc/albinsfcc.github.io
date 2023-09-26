@@ -56,13 +56,34 @@ header .hero-logo {
 header .menu {
     padding: 0 30px;
     display: flex;
+    width: 100%;
     flex-direction: row;
+    
+    @media screen and (max-width: 991px) {
+        flex-direction: row-reverse;
+    }
+}
+
+header .menu .hamburger {
+    display: none;
+
+    @media screen and (max-width: 991px) {
+        display: block;
+    }
+}
+
+header .menu .hamburger i {
+    font-size: 32px;
 }
 
 header .menu .menu-list {
     list-style: none;
     display: flex;
     gap: 20px;
+
+    @media screen and (max-width: 991px) {
+        display: none;
+    }
 }
 header .menu .menu-list .menu-item {
     padding: 0 20px;
@@ -76,6 +97,7 @@ header .menu .menu-list .menu-item a {
 header #theme {
     padding-right: 30px;
     font-size: 30px;
+    margin-top: 4px;
     cursor: pointer;
     transition: transform 1s, filter 1s;
 }
@@ -86,6 +108,66 @@ header #theme:hover {
 
 header #theme i {
     color: #000;
+    @media screen and (max-width: 991px) {
+        font-size: 32px;
+    }
+}
+
+
+.full-screen-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #00000014;
+    backdrop-filter: blur(10px);
+    z-index: 101;
+}
+
+.full-screen-overlay .outer-menu {
+    position: absolute;
+    height: 100vh;
+    background: aliceblue;
+    width: 80%;
+    right: -80%;
+    padding: 24px 0;
+    box-shadow: 0 0 15px 1px #111010;
+}
+
+.full-screen-overlay .outer-menu .close-btn {
+    text-align: end;
+    margin-right: 10px;
+}
+
+.full-screen-overlay .outer-menu .close-btn i {
+    font-size: 36px;
+}
+
+.full-screen-overlay .outer-menu .menu-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 24px;
+}
+
+.full-screen-overlay .outer-menu .menu-list li.menu-item {
+    border: 1px solid #aaa;
+    padding: 16px 30px;
+    background: rgb(199, 224, 247);
+}
+
+.full-screen-overlay .outer-menu .menu-list li.menu-item:not(:last-child) {
+    border-bottom: none;
+}
+
+.full-screen-overlay .outer-menu .menu-list li.menu-item a.menu-anchor {
+    font-size: 18px;
+    font-weight: 600;
+    color: #00223f;
+}
+
+.fixed-body {
+    overflow: hidden;
 }
 
 /**************   MAIN   ************/
@@ -305,6 +387,7 @@ main .portfolio .certification .certificate-modal .certificate {
     @media screen and (max-width: 991px) {
         width: calc(100vw - 10px);
         aspect-ratio: 353 / 199;
+        height: unset;
     }
 
 }
