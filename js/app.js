@@ -40,9 +40,10 @@ function initEvents() {
     closeMenu();
   });
 
-  $body.on('click', '.full-screen-overlay li.menu-item', function () {
+  $body.on('click', '.full-screen-overlay', function (e) {
+    if ($(e.target).is('li.menu-item, .full-screen-overlay, .menu-anchor'))
     closeMenu();
-  })
+  });
 }
 
 function formatDateTime(date) {
