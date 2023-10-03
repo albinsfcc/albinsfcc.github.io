@@ -127,12 +127,17 @@ header #theme i {
 
 .full-screen-overlay .outer-menu {
     position: absolute;
-    height: 100vh;
-    background: aliceblue;
     width: 80%;
+    height: 100vh;
     right: -80%;
     padding: 24px 0;
-    box-shadow: 0 0 15px 1px #111010;
+    background: transparent;
+    backdrop-filter: blur(1px);
+    border-end-start-radius: 20px;
+    border-start-start-radius: 20px;
+    box-shadow: 0 0 2px 1px #232323;
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
 }
 
 .full-screen-overlay .outer-menu .close-btn {
@@ -151,9 +156,9 @@ header #theme i {
 }
 
 .full-screen-overlay .outer-menu .menu-list li.menu-item {
-    border: 1px solid #aaa;
+    border: 1px solid #aaaaaa0f;
     padding: 16px 30px;
-    background: rgb(199, 224, 247);
+    background: #0000006e;
 }
 
 .full-screen-overlay .outer-menu .menu-list li.menu-item:not(:last-child) {
@@ -162,8 +167,10 @@ header #theme i {
 
 .full-screen-overlay .outer-menu .menu-list li.menu-item a.menu-anchor {
     font-size: 18px;
-    font-weight: 600;
-    color: #00223f;
+    font-weight: 400;
+    color: #c5c5c5;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 .fixed-body {
